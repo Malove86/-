@@ -1,0 +1,44 @@
+﻿<Window x:Class="test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5" >
+            <StackPanel Orientation="Horizontal">
+                <Button Content="节点计算" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75"/>
+                <Button Content="载入数据" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="75"/>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="5" Grid.Row="1">
+            <DataGrid IsReadOnly="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="AutoID" Binding="{Binding id}" Width="100"/>
+                    <DataGridTextColumn Header="经营部" Binding="{Binding SX_BMNum}"  Width="100"/>
+                    <DataGridTextColumn Header="客户编码" Binding="{Binding KF_Num}"  Width="150"/>
+                    <DataGridTextColumn Header="订单日期" Binding="{Binding DD_RQ}"  Width="150"/>
+                    <DataGridTextColumn Header="订单确认时间" Binding="{Binding DD_QR_Time}"  Width="150"/>
+                    <DataGridTextColumn Header="送达时间" Binding="{Binding DD_SD_Time}"  Width="150"/>
+                    <DataGridTextColumn Header="约定时间" Binding="{Binding DD_RD_Time}"  Width="150"/>
+                    <DataGridTextColumn Header="重置时间" Binding="{Binding CZSJ}"  Width="150"/>
+                    <DataGridTextColumn Header="耗时" Binding="{Binding HS}"  Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+
+
+
+
+    </Grid>
+
+</Window>
