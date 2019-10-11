@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using test.DAL;
 
 namespace test
 {
@@ -23,6 +24,19 @@ namespace test
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Click_ButtonJDJS(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Click_ButtonLoad(object sender, RoutedEventArgs e)
+        {
+            DD_InforMationDAL dal = new DD_InforMationDAL();
+            string selectTime = Convert.ToString(daTime.SelectedDate);
+             Datagriditme.ItemsSource =dal.GetAlldD_Infors();
+
         }
     }
 }
