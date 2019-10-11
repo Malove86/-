@@ -64,12 +64,12 @@ namespace test.DAL
                 AutoID=Convert.ToInt32(dr["AutoID"]),
                 DD_BMNum=dr["DD_BMNum"].ToString(),
                 DD_KFNume=dr["DD_KFNume"].ToString(),
-                DD_RQTime= Convert.ToDateTime(SqlHelper.GetDBnullValue(dr["DD_RQTime"])),
-                DD_QRTime=Convert.ToDateTime(SqlHelper.GetDBnullValue(dr["DD_QRTime"])),
-                DD_SDTime=Convert.ToDateTime(SqlHelper.GetDBnullValue(dr["DD_SDTime"])),
-                DD_ZDTime=Convert.ToDateTime(SqlHelper.GetDBnullValue(dr["DD_ZDTime"])),
+                DD_RQTime= (DateTime?)SqlHelper.GetDBnullValue(dr["DD_RQTime"]),
+                DD_QRTime= (DateTime?)SqlHelper.GetDBnullValue(dr["DD_QRTime"]),
+                DD_SDTime= (DateTime?)SqlHelper.GetDBnullValue(dr["DD_SDTime"]),
+                DD_ZDTime=(DateTime?)SqlHelper.GetDBnullValue(dr["DD_ZDTime"]),
                 DD_HSTime=dr["DD_HSTime"].ToString(),
-                DD_ReseTime=Convert.ToDateTime(SqlHelper.GetDBnullValue(dr["DD_ReseTime"]))
+                DD_ReseTime= (DateTime?)SqlHelper.GetDBnullValue(dr["DD_ReseTime"])
                 
             };
             return dD_Infor;
