@@ -43,7 +43,7 @@ namespace test.DAL
 
         public List<DD_InforMation> GetAlldD_Infors()
         {
-            string sql = "select * from DD_InforMation";
+            string sql = "select * from DD_InforMation where DD_SDTime IS NOT NULL";
             DataTable dt = SqlHelper.ExecuteTable(sql);
             List<DD_InforMation> list = new List<DD_InforMation>();
             if (dt.Rows.Count>0)
