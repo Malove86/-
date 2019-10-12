@@ -10,8 +10,9 @@ namespace test.Model
     {
         public int AutoID { get; set; }
         public string JRName { get; set; }
+        public string JJRName { get; set; }
         public DateTime? EndJDTime { get; set; }
-        public DateTime? intSatJQTime { get; set; }
+        public DateTime? SatJQTime { get; set; }
         public DateTime? SatJHTime { get; set; }
     }
 }

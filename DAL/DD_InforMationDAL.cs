@@ -74,6 +74,34 @@ namespace test.DAL
             };
             return dD_Infor;
         }
+
+    
+        public void Update(DD_InforMation inforMation)
+        {
+            string sql = @" UPDATE DD_InforMation  SET  
+                                DD_BMNum =  @DD_BMNum
+                              , DD_KFNume = @DD_KFNume
+                              , DD_RQTime = @DD_RQTime
+                              , DD_QRTime = @DD_QRTime
+                              , DD_ZDTime = @DD_ZDTime
+                              , DD_SDTime = @DD_SDTime
+                              , DD_HSTime = @DD_HSTime
+                              , DD_ReseTime = @DD_ReseTime 
+                                Where AutoID=@AutoID";
+            SqlHelper.ExecuteNonQuery(sql, 
+                new SqlParameter("@DD_BMNum", inforMation.DD_BMNum),
+                new SqlParameter("@DD_KFNume", inforMation.DD_KFNume),
+                new SqlParameter("@DD_RQTime", inforMation.DD_RQTime),
+                new SqlParameter("@DD_QRTime", inforMation.DD_QRTime),
+                new SqlParameter("@DD_ZDTime", inforMation.DD_ZDTime),
+                new SqlParameter("@DD_SDTime", inforMation.DD_SDTime),
+                new SqlParameter("@DD_HSTime", inforMation.DD_HSTime),
+                new SqlParameter("@DD_ReseTime", inforMation.DD_ReseTime),
+                new SqlParameter("@AutoID", inforMation.AutoID)                                                          
+                                    );
+
+        }
+
     }
 }
 

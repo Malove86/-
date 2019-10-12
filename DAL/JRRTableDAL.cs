@@ -13,12 +13,12 @@ namespace test.DAL
     public class JRRTableDAL
     {  
 
-        public List<JRRTable> GetAlldD_Infors()
+        public List<JRRTable> GetAlldD_JRRTable()
         {
             string sql = "select * from JRRTable ";
             DataTable dt = SqlHelper.ExecuteTable(sql);
             List<JRRTable> list = new List<JRRTable>();
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 foreach (DataRow item in dt.Rows)
                 {
@@ -27,6 +27,7 @@ namespace test.DAL
                 }
             }
             return list;
+
         }
 
         private JRRTable RowToDDInforMationID(DataRow dr)
@@ -34,9 +35,10 @@ namespace test.DAL
             JRRTable dD_Infor = new JRRTable()
             { 
                 AutoID=Convert.ToInt32(dr["AutoID"]),
-                JRName=dr["JRName"].ToString(),              
+                JRName=dr["JRName"].ToString(),
+                JJRName = dr["JJRName"].ToString(),              
                 EndJDTime= (DateTime?)SqlHelper.GetDBnullValue(dr["EndJDTime"]),
-                intSatJQTime= (DateTime?)SqlHelper.GetDBnullValue(dr["intSatJQTime"]),
+                SatJQTime= (DateTime?)SqlHelper.GetDBnullValue(dr["SatJQTime"]),
                 SatJHTime= (DateTime?)SqlHelper.GetDBnullValue(dr["SatJHTime"])        
             };
             return dD_Infor;
