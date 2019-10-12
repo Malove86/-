@@ -93,7 +93,7 @@ namespace test.DAL
                 new SqlParameter("@DD_KFNume", inforMation.DD_KFNume),
                 new SqlParameter("@DD_RQTime", inforMation.DD_RQTime),
                 new SqlParameter("@DD_QRTime", inforMation.DD_QRTime),
-                new SqlParameter("@DD_ZDTime", inforMation.DD_ZDTime),
+                new SqlParameter("@DD_ZDTime", SqlHelper.ToDBnullValue(inforMation.DD_ZDTime)),
                 new SqlParameter("@DD_SDTime", inforMation.DD_SDTime),
                 new SqlParameter("@DD_HSTime", inforMation.DD_HSTime),
                 new SqlParameter("@DD_ReseTime", inforMation.DD_ReseTime),

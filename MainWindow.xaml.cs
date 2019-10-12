@@ -32,11 +32,34 @@ namespace test
 
         private void Click_ButtonJDJS(object sender, RoutedEventArgs e)
         {
-           
 
-           Datagriditme.ItemsSource = GetNweTime();
-          
+            DD_InforMationDAL inforMationDAL = new DD_InforMationDAL();
+            //Datagriditme.ItemsSource = GetNweTime();
+            // DD_InforMation dD_Infor = new DD_InforMation();
+            var list = GetNweTime();
+            NewMethod(inforMationDAL, list);
 
+        }
+
+        private static void NewMethod(DD_InforMationDAL inforMationDAL, List<DD_InforMation> list)
+        {
+            foreach (var item in list)
+            {
+                DD_InforMation dD_Infor = new DD_InforMation
+                {
+                    AutoID = item.AutoID,
+                    DD_BMNum = item.DD_BMNum,
+                    DD_HSTime = item.DD_HSTime,
+                    DD_KFNume = item.DD_KFNume,
+                    DD_QRTime = item.DD_QRTime,
+                    DD_ReseTime = item.DD_ReseTime,
+                    DD_RQTime = item.DD_RQTime,
+                    DD_SDTime = item.DD_SDTime,
+                    DD_ZDTime = item.DD_ZDTime
+                };
+                inforMationDAL.Update(dD_Infor);
+
+            }
         }
 
 
