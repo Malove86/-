@@ -15,7 +15,7 @@ namespace test.DAL
 
         public List<JRRTable> GetAlldD_Infors()
         {
-            string sql = "select * from DD_InforMation where DD_SDTime IS NOT NULL";
+            string sql = "select * from JRRTable ";
             DataTable dt = SqlHelper.ExecuteTable(sql);
             List<JRRTable> list = new List<JRRTable>();
             if (dt.Rows.Count>0)
