@@ -13,7 +13,7 @@ namespace test.ConnTools
         /// </summary>
         /// <param name="date">日期</param>
         /// <returns>星期</returns>
-        public string ConvertDateToZHWeek(DateTime date)
+        public static string ConvertDateToZHWeek(DateTime date)
         {
             string week = string.Empty;
             DayOfWeek weekstr = new DateTime(date.Year, date.Month, date.Day).DayOfWeek;
